@@ -50,11 +50,11 @@ $(document).ready(function(){
 	$("button#demo_submit").click(function(){
 		$("button#demo_submit").attr("disabled", "disabled");
 
-		var url = "https://www.cepstral.com/demos/createAudio.php";
+		var url = "http://speech.seediffusion.cc:7774/synthesize";
 		
 		$("button#demo_submit").html('<img src="https://www.cepstral.com/media/images/ajax_loader.gif" />');
 		
-		var params = {"voiceText":$("textarea#demo_text").val(), "voice":$("select#voice_select option:selected").html(), "createTime":(new Date()).getTime(), "rate":$("select#rate option:selected").val(), "pitch":$("select#pitch option:selected").val(), "sfx":$("select#effect option:selected").val()};
+		var params = {"text":$("textarea#demo_text").val(), "voice":$("select#voice_select option:selected").html(), "createTime":(new Date()).getTime(), "rate":$("select#rate option:selected").val(), "pitch":$("select#pitch option:selected").val(), "sfx":$("select#effect option:selected").val()};
 		
 		$.get(url, params, function(data){
 			
