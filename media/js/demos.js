@@ -54,7 +54,7 @@ $(document).ready(function(){
 		
 		$("button#demo_submit").html('<img src="https://www.cepstral.com/media/images/ajax_loader.gif" />');
 		
-		var params = {"text":$("textarea#demo_text").val(), "voice":$("select#voice_select option:selected").html(), "createTime":(new Date()).getTime(), "rate":$("select#rate option:selected").val(), "pitch":$("select#pitch option:selected").val(), "sfx":$("select#effect option:selected").val()};
+		var params = {"voice":$("select#voice_select option:selected").html(), "text":$("textarea#demo_text").val(), "createTime":(new Date()).getTime(), "rate":$("select#rate option:selected").val(), "pitch":$("select#pitch option:selected").val(), "sfx":$("select#effect option:selected").val()};
 		
 		$.get(url, params, function(data){
 			
