@@ -138,7 +138,7 @@ function voiceChanged(voice)
 
 function audioDone()
 {
-	$.post('https://www.cepstral.com//demos/deleteAudio.php', function(data){});
+	$.post('', function(data){});
 	$("button#demo_submit").removeAttr("disabled");
 	$("button#demo_submit").html("Say it");
 	$("#demoAudio").remove();
