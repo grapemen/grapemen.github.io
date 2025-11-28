@@ -1,0 +1,35 @@
+<html><head>
+  <meta charset="UTF-8">
+  <title>Acapela</title>
+</head>
+<body>
+  <h2>what have you typed!?!?!?</h2>
+  <iframe id="videoFrame" src=""></iframe>
+<a href="./index.html">ok bring me home</a>
+    <script>
+        (function() {
+            try {
+                // Get query parameters from the URL
+                const params = new URLSearchParams(window.location.search);
+                const textTyped = params.get("v");
+
+                if (!textTyped) {
+                    document.body.innerHTML = "<h2 style='color:white;text-align:center;'>Error: Missing video_id parameter.</h2>";
+                    return;
+                }
+
+                // Sanitize textTyped to prevent injection
+                const safeTextTyped = encodeURIComponent(textTyped);
+
+                // Build the embed URL
+                const embedUrl = `https://www.acapela-cloud.com/api/command/?voice=WillLittleCreature22k_HQ&text=${safeTextTyped}&output=stream&type=mp3&samplerate=22050&token=bd8b22e3e5ebbaa05ea0055aec4e16c357c29486`;
+
+                // Set iframe source
+                document.getElementById("videoFrame").src = embedUrl;
+            } catch (err) {
+                console.error("Error loading video:", err);
+                document.body.innerHTML = "<h2 style='color:white;text-align:center;'>An error occurred while loading the video.</h2>";
+            }
+        })();
+    </script>
+</body></html>

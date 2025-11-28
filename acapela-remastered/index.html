@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Acapela</title>
+</head>
+<body>
+  <h2>acapela remastered: no background and you can download the speech you made!1!1!1</h2>
+
+  <label for="voice">choose a voice:</label>
+  <select id="voice">
+    <option value="united-states-will-little-creature-hq">[United States] Will Little Creature [HQ]</option>
+    <option value="united-states-will-little-creature-nv">[United States] Will Little Creature [NV]</option>
+    <option value="voice3">Voice 3</option>
+  </select>
+
+  <br><br>
+
+  <label for="text">enter your text:</label>
+  <input type="text" id="text" placeholder="type whatever you want like: big chungus " size="40">
+
+  <br><br>
+
+  <button onclick="goToVoicePage()">Go</button>
+
+  <script>
+    function goToVoicePage() {
+      const voice = document.getElementById('voice').value;
+      const text = encodeURIComponent(document.getElementById('text').value);
+      const url = `${voice}.html?v=${text}`;
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
