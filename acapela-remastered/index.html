@@ -26,13 +26,14 @@
     function goToVoicePage() {
       const voice = document.getElementById('voice').value;
       const text = encodeURIComponent(document.getElementById('text').value);
-      const url = `https://www.acapela-cloud.com/api/command/?voice=${voice}&text=${text}&output=stream&type=mp3&samplerate=22050&token=bd8b22e3e5ebbaa05ea0055aec4e16c357c29486`;
+      const url = `./${voice}.html?v=${text}`;
       window.location.href = url;
     }
   </script>
 </body>
 
 </html>
+
 
 
 
