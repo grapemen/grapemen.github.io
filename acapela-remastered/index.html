@@ -9,9 +9,8 @@
 
   <label for="voice">choose a voice:</label>
   <select id="voice">
-    <option value="united-states-will-little-creature-hq">[United States] Will Little Creature [HQ]</option>
-    <option value="united-states-will-little-creature-nv">[United States] Will Little Creature [NV]</option>
-    <option value="voice3">Voice 3</option>
+    <option value="WillLittleCreature22k_HQ">[United States] Will Little Creature [HQ]</option>
+    <option value="WillLittleCreature22k_NV">[United States] Will Little Creature [NV]</option>
   </select>
 
   <br><br>
@@ -27,9 +26,10 @@
     function goToVoicePage() {
       const voice = document.getElementById('voice').value;
       const text = encodeURIComponent(document.getElementById('text').value);
-      const url = `${voice}.html?v=${text}`;
+      const url = `https://www.acapela-cloud.com/api/command/?voice=&{voice}&text=${text}&output=stream&type=mp3&samplerate=22050&token=bd8b22e3e5ebbaa05ea0055aec4e16c357c29486`;
       window.location.href = url;
     }
   </script>
 </body>
+
 </html>
